@@ -15,6 +15,9 @@ class Solution {
     public String reversePrefix(String s, int k) {
         int left =0;
         int right = k-1;
+        if (k > s.length()) {
+            k = s.length();
+        }
         String arr1 = new String();
         String part = s.substring(0, k);
         arr1 = reverse(part) + s.substring(k);
