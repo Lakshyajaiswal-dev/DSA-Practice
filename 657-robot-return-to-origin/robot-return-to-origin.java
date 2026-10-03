@@ -16,9 +16,6 @@ class Solution {
             cU--;
         }
        }
-       if((cL==0)&&(cU==0)){
-        return true;
-       }
-       return false;
+      return (cL==0)&&(cU==0);
     }
 }
