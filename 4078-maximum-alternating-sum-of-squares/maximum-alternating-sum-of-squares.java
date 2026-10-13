@@ -6,15 +6,16 @@ class Solution {
         }
         Arrays.sort(nums);
         long sum =0;
-        long m = 0;
-        for(int i=0; i<n; i++){
-            if(i<n/2){
-                m+=nums[i];
-            }
-            else{
-               sum+=nums[i];
-            }
+        int i=0;
+        int j=n-1;
+        while(i<j){
+           sum+=nums[j]-nums[i];
+           i++;
+           j--;
         }
-        return sum-m;
+        if (n%2!=0){
+            return sum+nums[n/2];
+        }
+        return sum;
     }
 }
