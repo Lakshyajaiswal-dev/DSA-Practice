@@ -6,10 +6,7 @@ class Solution {
                 count++;
             }
         }
-      
-        if(count==1){
-             return true;
-        }
-        return false;
+        count+=2;
+        return count==3;
     }
 }
