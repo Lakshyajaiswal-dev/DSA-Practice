@@ -10,10 +10,7 @@ class Solution {
         for(int i=0; i<w2.length; i++){
             s1.append(w2[i]);
         }
-        if(s.toString().equals(s1.toString())){
-            return true;
-        }
-        return false;
+        return s.toString().equals(s1.toString());
 
 
     }
