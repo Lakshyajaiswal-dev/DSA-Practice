@@ -3,7 +3,7 @@ class Solution {
        char arr[]=s.toCharArray();
        int left =0;
        int right = s.length()-1;
-       int lc=0 , rc=0;  
+       int lc=0 ; 
        while(left<right){
             char l=Character.toLowerCase(arr[left]);
             char r=Character.toLowerCase(arr[right]);
@@ -12,11 +12,11 @@ class Solution {
             }
             left++;
              if(r=='a' || r=='e'||r=='i' || r=='o' || r=='u' ){
-                rc++;
+                lc--;
             }
             
             right--;
         }
-       return lc==rc;
+       return lc==0;
     }
 }
