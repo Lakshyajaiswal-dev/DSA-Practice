@@ -1,17 +1,22 @@
 class Solution {
     public boolean halvesAreAlike(String s) {
-        int count =0;
-        int count1=0;
-        int n = s.length()/2;
-        for(int i=0; i<n; i++){
-            if(s.charAt(i)=='a'||s.charAt(i)=='e'||s.charAt(i)=='i'||s.charAt(i)=='o'||s.charAt(i)=='u'||s.charAt(i)=='A'||s.charAt(i)=='E'||s.charAt(i)=='I'||s.charAt(i)=='O'||s.charAt(i)=='U'){
-                count++;
+       char arr[]=s.toCharArray();
+       int left =0;
+       int right = s.length()-1;
+       int lc=0 , rc=0;  
+       while(left<right){
+            char l=Character.toLowerCase(arr[left]);
+            char r=Character.toLowerCase(arr[right]);
+            if(l=='a' || l=='e' ||l=='i' || l=='o' || l=='u' ){
+                lc++;
             }
-            if(s.charAt(i+n)=='a'||s.charAt(i+n)=='e'||s.charAt(i+n)=='i'||s.charAt(i+n)=='o'||s.charAt(i+n)=='u'||s.charAt(i+n)=='A'||s.charAt(i+n)=='E'||s.charAt(i+n)=='I'||s.charAt(i+n)=='O'||s.charAt(i+n)=='U'){
-                count1++;
+            left++;
+             if(r=='a' || r=='e'||r=='i' || r=='o' || r=='u' ){
+                rc++;
             }
+            
+            right--;
         }
-        return count==count1;
-        
+       return lc==rc;
     }
 }
