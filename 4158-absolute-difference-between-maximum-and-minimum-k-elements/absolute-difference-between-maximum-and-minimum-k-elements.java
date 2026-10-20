@@ -1,14 +1,14 @@
 class Solution {
     public int absDifference(int[] nums, int k) {
         Arrays.sort(nums);
-        int n = nums.length;
+        int n = nums.length -1;
         int suml=0;
         int sums=0;
         for(int i=0; i<k; i++){
-            suml+=nums[n-i-1];
+            suml+=nums[n];
             sums+=nums[i];
+            n--;
         }
-        int result = Math.abs(suml-sums);
-        return result;
+        return Math.abs(suml-sums);
     }
 }
