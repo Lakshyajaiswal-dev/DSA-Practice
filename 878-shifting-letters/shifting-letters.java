@@ -1,15 +1,12 @@
 class Solution {
     public String shiftingLetters(String s, int[] shifts) {
-      int n = shifts.length;
-      long suffixSum [] = new long[n];  
-      suffixSum[n-1]= shifts[n-1];
-      for(int i=n-2; i>=0; i--){
-        suffixSum[i]=suffixSum[i+1]+shifts[i];
-      }
-      char [] ch = s.toCharArray();
-      for(int i=0; i<n; i++){
-        ch[i] = (char)('a'+(ch[i]-'a'+suffixSum[i])%26);
-      }
-      return new String (ch);
+      char[] arr = s.toCharArray();
+       int totalShift = 0;
+
+          for (int i = arr.length - 1; i >= 0; i--) {
+           totalShift = (totalShift + shifts[i]) % 26;
+               arr[i] = (char) ('a' + (arr[i] - 'a' + totalShift) % 26);
+           }
+         return new String(arr);
     }
 }
