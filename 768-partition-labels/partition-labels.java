@@ -4,14 +4,15 @@ class Solution {
        int n = s.length();
        int start=0;
        int end=0;
-       int [] lastOccurence = new int [26];
+    //    int [] lastOccurence = new int [26];
+    Map<Character, Integer> lastOccurence = new HashMap<>();
        for(int i=0; i<s.length();i++){
         char curr = s.charAt(i);
-        lastOccurence[curr-'a'] =i;
+        lastOccurence.put(curr, i);
        }
        for(int i=0; i<s.length();i++){
         char curr = s.charAt(i);
-        int lastIndex = lastOccurence[curr-'a'];
+        int lastIndex = lastOccurence.get(curr);
         end = Math.max(end, lastIndex);
 
         if(i==end){
